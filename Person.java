@@ -172,6 +172,20 @@ public class Person implements AddressBookIF  {
         System.out.println("Sorted Address Book "+ sortedContact);
 
     }
-   
+    public void sortByCity() {
+
+        Map<String,Contacts> sortedByCity =personByCity.entrySet().stream()
+                .sorted(Entry.comparingByKey()).collect(Collectors.toMap(Entry::getKey, Entry::getValue
+                        ,(oldValue,newValue)->oldValue,LinkedHashMap::new));
+        System.out.println("Sorted Address Book "+sortedByCity);
+
+    }
+    public void sortByState() {
+
+        Map<String,Contacts> sortedByState =personByState.entrySet().stream()
+                .sorted(Entry.comparingByKey()).collect(Collectors.toMap(Entry::getKey, Entry::getValue
+                        ,(oldValue,newValue)->oldValue,LinkedHashMap::new));
+        System.out.println("Sorted Address Book "+sortedByState);
+    }
 }
 
