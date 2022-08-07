@@ -164,6 +164,14 @@ public class Person implements AddressBookIF  {
             System.out.println("Person with particular state is not present");
         }
     }
+    public void sortAddressBook() {
+
+        Map<String,Contacts> sortedContact =detailsBook.entrySet().stream()
+                .sorted(Entry.comparingByKey()).collect(Collectors.toMap(Entry::getKey, Entry::getValue
+                        ,(oldValue,newValue)->oldValue,LinkedHashMap::new));
+        System.out.println("Sorted Address Book "+ sortedContact);
+
+    }
    
 }
 
