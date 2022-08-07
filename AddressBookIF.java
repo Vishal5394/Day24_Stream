@@ -8,5 +8,6 @@ public interface AddressBookIF {
     void display();
     void addContact();
     void editContact();
+    void deleteContact();
     
 }
