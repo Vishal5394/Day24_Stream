@@ -69,7 +69,6 @@ public class Person implements AddressBookIF  {
             System.out.println("Contact is not present in book");
         }
     }
-  
     public void display() {
         System.out.println("Created contact list is");
         for(Entry m : detailsBook.entrySet()) {
