@@ -7,5 +7,6 @@ public interface AddressBookIF {
     void createContact();
     void display();
     void addContact();
+    void editContact();
     
 }
