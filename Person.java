@@ -13,6 +13,7 @@ public class Person implements AddressBookIF  {
     ContactInfo infoContact = new ContactInfo();
     Contacts contact = new Contacts(firstName, lastName, address, city, state, zip, phoneNumber, email);
     static Map<String,Contacts> detailsBook = new HashMap<>();
+    static Map<String,Map<String,Contacts>> book = new HashMap<>();
   
 
     public void createContact() {
@@ -73,6 +74,16 @@ public class Person implements AddressBookIF  {
         System.out.println("Created contact list is");
         for(Entry m : detailsBook.entrySet()) {
             System.out.println(m.getKey()+"--> "+m.getValue());
+        }
+    }
+    public void addToBook() {
+        System.out.println("Enter Name of Address Book");
+        String bookName = sc.next();
+        if(!book.containsKey(bookName)) {
+            book.put(bookName, detailsBook);
+        }
+        else {
+            System.out.println("Book already exists!");
         }
     }
 }
