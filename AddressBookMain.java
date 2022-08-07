@@ -7,5 +7,6 @@ public class AddressBookMain {
 		 AddressBookIF person1 = new Person();
 	        person1.createContact();
 	        person1.display();
+	        person1.addContact();
 	}
 }

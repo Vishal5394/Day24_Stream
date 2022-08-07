@@ -31,6 +31,23 @@ public class Person implements AddressBookIF  {
             }
         }
     }
+    public void addContact()  {
+        System.out.println("Enter how many contacts you want to add");
+        int numOfContacts = sc.nextInt();
+        while(numOfContacts > 0) {
+            System.out.println("Enter Name of person");
+            String firstName = sc.next();
+            if(detailsBook.containsKey(firstName)) {
+                System.out.println("Contact already exists!");
+                return;
+            }
+            else {
+                infoContact.info();
+                detailsBook.put(firstName,new Contacts(firstName, lastName, address, city, state, zip, phoneNumber, email));
+                numOfContacts--;
+            }
+        }
+    }
   
     public void display() {
         System.out.println("Created contact list is");
