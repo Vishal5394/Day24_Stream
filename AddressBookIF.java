@@ -10,5 +10,6 @@ public interface AddressBookIF {
     void editContact();
     void deleteContact();
     void addToBook();
+    void operation() ;
     
 }

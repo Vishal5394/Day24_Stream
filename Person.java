@@ -86,4 +86,13 @@ public class Person implements AddressBookIF  {
             System.out.println("Book already exists!");
         }
     }
+    public void operation() {
+        System.out.println("Enter how many address books you want to add");
+        int noOfAddressBook = sc.nextInt();
+        while(noOfAddressBook > 0) {
+            addContact();
+            addToBook();
+            noOfAddressBook--;
+        }
+    }
 }

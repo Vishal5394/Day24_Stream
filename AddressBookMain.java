@@ -11,5 +11,6 @@ public class AddressBookMain {
 	        person1.editContact();
 	        person1.deleteContact();
 	        person1.addToBook();
+	        person1.operation();
 	}
 }
