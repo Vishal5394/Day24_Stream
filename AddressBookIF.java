@@ -13,5 +13,10 @@ public interface AddressBookIF {
     void operation() ;
     void searchPerson();
     void displayBook();
+    void addContactByCity();
+    void viewByCity();
+    void addContactByState();
+    void viewByState();
+    
     
 }
