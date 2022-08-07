@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Person implements AddressBookIF  {
     static Scanner sc = new Scanner(System.in);
@@ -95,4 +96,17 @@ public class Person implements AddressBookIF  {
             noOfAddressBook--;
         }
     }
+    public void searchPerson() {
+        System.out.println("Enter person name to search ");
+        String name = sc.next();
+        Map<String,Contacts> searchedPerson =detailsBook.entrySet().stream().filter(e->e.getKey().equals(name)).collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
+        System.out.println(searchedPerson);
+    }
+    public void displayBook() {
+        System.out.println("Address Books are:");
+        for(Entry e : book.entrySet()) {
+            System.out.println(e.getKey()+"--> "+e.getValue());
+        }
+    }
 }
+

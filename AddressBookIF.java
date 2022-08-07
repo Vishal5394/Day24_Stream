@@ -11,5 +11,7 @@ public interface AddressBookIF {
     void deleteContact();
     void addToBook();
     void operation() ;
+    void searchPerson();
+    void displayBook();
     
 }
